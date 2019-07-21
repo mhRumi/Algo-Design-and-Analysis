@@ -13,15 +13,17 @@ int radix(string text)
     }
     return rad_sum % token.size();
 }
+
+
 void Hashfunction(int output[])
 {
     for(int i=0; i<token.size(); i++)
     {
         int r = radix(token[i]);
         output[r] = 1;
-
     }
 }
+
 int main()
 {
 
