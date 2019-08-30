@@ -14,17 +14,14 @@ int radix(string text)
     return rad_sum % token.size();
 }
 
-void Search(string pattern, string output[])
+void Search(string pattern, string hashTable[])
 {
     int r = radix(pattern);
-    cout<<r<<endl;
-    while(output[r] != pattern && r< token.size())
+    while(hashTable[r] != pattern && r< token.size())
     {
         r = (r+ 1) ;
-        cout<<r<<endl;
-
     }
-    if(output[r] == pattern)
+    if(hashTable[r] == pattern)
         cout<<"found at position  "<<r<<endl;
     else
     cout<<"Not found"<<endl;
@@ -33,21 +30,19 @@ void Search(string pattern, string output[])
 
 
 
-void Insert(string output[])
+void Insert(string hashTable[])
 {
-    cout<<"At insert"<<endl;
     for(int i=0; i<token.size(); i++)
     {
         int r = radix(token[i]);
-        while(output[r] != ""){
+        while(hashTable[r] != ""){
                 r = (r+1) % token.size();
         }
         cout<<r<<"  "<<token[i]<<endl;
 
-        output[r] = token[i];
+        hashTable[r] = token[i];
     }
 
-    cout<<"end of insert"<<endl;
 }
 
 int main()
@@ -61,12 +56,12 @@ int main()
     {
         token.push_back(temp);
     }
-    string output[token.size()];
+    string hashTable[token.size()];
 
     for(int i=0; i<token.size(); i++){
-        output[i] == "";
+        hashTable[i] == "";
     }
-    Insert(output);
-    Search("bangla",output);
+    Insert(hashTable);
+    Search("bangla",hashTable);
 
 }
