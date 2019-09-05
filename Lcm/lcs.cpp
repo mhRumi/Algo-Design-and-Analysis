@@ -9,7 +9,7 @@ int main()
     int m = 0,n = 0;
     n = s1.size();
     m = s2.size();
-    int arr[m][n];
+    int arr[m+1][n+1];
     string result= "";
 
     for(int i=0; i<=s2.size(); i++)
