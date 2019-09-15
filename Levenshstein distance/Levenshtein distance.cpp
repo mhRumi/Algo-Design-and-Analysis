@@ -3,10 +3,10 @@ using namespace std;
 int main()
 {
     string s1, s2;
-    cout<<"src : ";
+    cout<<"Src : ";
     cin>>s2;
 
-    cout<<"destn : ";
+    cout<<"Destn : ";
     cin>>s1;
 
     int m = 0,n = 0;
