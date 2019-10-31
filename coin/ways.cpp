@@ -4,22 +4,18 @@ int coinChange(int ara[],int n,int val)
 {
     int tb[n+1][val+1];
     tb[0][0] = 1;
-    for(int i = 1; i < val+1;i++)
+    for(int i = 1; i <= val; i++)
     {
         tb[0][i] = 0;
     }
-    for(int i = 1; i < n+1;i++)
+    for(int i = 1; i <= n; i++)
     {
-        for(int j = 0; j < val+1;j++)
+        for(int j = 0; j <= val; j++)
         {
-            if(j >= ara[i-1] ) //coin =ara[i-1]
-            {
+            if(j >= ara[i-1] ) //coin =ara[i-1] , j = value
                 tb[i][j] = tb[i-1][j]+tb[i][j-ara[i-1]];
-            }
             else
-            {
                 tb[i][j] = tb[i-1][j];
-            }
         }
     }
     cout << endl;
