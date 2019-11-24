@@ -9,7 +9,7 @@ void longestIncreasingOddEvenSequence(int arr[], int n){
     {
         for(int j=0; j<i; j++)
         {
-            if(arr[i] > arr[j] && (arr[i]+arr[j]) != 0 && lioes[i] < lioes[j] +1)
+            if(arr[i] > arr[j] && (arr[i]+arr[j]) % 2 != 0 && lioes[i] < lioes[j] +1)
             {
                 lioes[i] = lioes[j]+1;
             }
